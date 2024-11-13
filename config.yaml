@@ -1,0 +1,8 @@
+path: C:\Users\alexs\Desktop\python_yolo_light\model\model\dataset
+train: C:\Users\alexs\Desktop\pythonProject_trning\data_set\images
+# Путь к папке с тренировочными изображениями
+val: C:\Users\alexs\Desktop\pythonProject_trning\images
+# Путь к папке с валидационными изображениями
+nc: 1
+# Укажите количество классов в вашем датасете
+names: ['traffic light']  # Список с названиями классов
