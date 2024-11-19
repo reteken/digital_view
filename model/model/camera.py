@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2
 from ultralytics.utils.plotting import Annotator  # ultralytics.yolo.utils.plotting is deprecated
 
-model = YOLO(r'C:\Users\alexs\Desktop\cvr_october_29_30\runs\detect\train20\weights\best.pt')
+model = YOLO(r'line')
 cap = cv2.VideoCapture(0)
 
 cap.set(4, 640) #cap.set(3, 640)
@@ -12,8 +12,6 @@ while True:
     _, img = cap.read()
     _, img = cap.read()
 
-    # BGR to RGB conversion is performed under the hood
-    # see: https://github.com/ultralytics/ultralytics/issues/2575
     results = model.predict(img, conf=0.55)
 
     for r in results:
@@ -22,7 +20,7 @@ while True:
 
         boxes = r.boxes
         for box in boxes:
-            b = box.xyxy[0]  # get box coordinates in (top, left, bottom, right) format
+            b = box.xyxy[0]
             c = box.cls
             annotator.box_label(b, model.names[int(c)])
 
